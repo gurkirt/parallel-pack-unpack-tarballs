@@ -6,7 +6,7 @@ Brake a large dataset and pack into multiple tar ball in parallel
 ```
 python pack_dataset.py <directory-to-tar-containing file or sub directories>\
     <directory-where-to-store-tarballs> \
-    --batch_size=<int:number of files or directories in single tar> 
+    --batch_size=<int:number of files or directories in single tar> \
     --num_jobs=<int:num of prcoess to use to tar>
 ```
 

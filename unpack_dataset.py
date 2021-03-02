@@ -18,6 +18,9 @@ if __name__ == '__main__':
                    help='Number of parallel jobs to run')
     args = p.parse_args()
     
+    print('Source directory is ', args.tar_dir)
+    print('Target directory is ', args.data_dir)
+    
     tar_files = os.listdir(args.tar_dir)
     tar_files = [f for f in tar_files if f.endswith('.tar')]
 

@@ -38,9 +38,11 @@ if __name__ == '__main__':
     print('SOURCE DIR is ::', args.data_dir)
     print('TARGET DIR is ::', args.tar_dir)
 
-    dirs = os.listdir(args.data_dir)
-
-    print('Number of directories/files :::>', len(dirs))
+    files_or_dirs = os.listdir(args.data_dir)
+    
+    # files_or_dirs = result = [os.path.join(dp, f) for dp, dn, filenames in os.walk(args.data_dir) for f in filenames if os.path.splitext(f)[1] == '.jpg']
+    
+    print('Number of directories/files :::>', len(files_or_dirs))
 
     batchs = make_batchs(dirs, args.num_batchs)
     

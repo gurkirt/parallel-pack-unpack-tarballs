@@ -3,9 +3,12 @@ from joblib import delayed
 from joblib import Parallel
 import math
 def tar_a_batch(data_dir, tar_dir, batch_id, batch):
+    
     cmd = 'tar -cf {:s}/tarball_{:d}.tar '.format(tar_dir, batch_id) 
+    ## If using file name with os.walk then add filenames to text file 
+    ## use tar -cv -T file_list.txt -f tarball_{:d}.tar
     for dir_name in batch:
-        cmd += dir_name + ' '
+        cmd += './'+dir_name + ' '
 
     os.system(cmd)
 
@@ -19,6 +22,8 @@ def make_batchs(dirs, nb):
         if iter>0 and iter%batch_size == 0:
             batchs.append(batch) 
             batch = []
+    
+    batchs.append(batch)
     
     return batchs
 
@@ -44,7 +49,7 @@ if __name__ == '__main__':
     
     print('Number of directories/files :::>', len(files_or_dirs))
 
-    batchs = make_batchs(dirs, args.num_batchs)
+    batchs = make_batchs(file_or_dirs, args.num_batchs)
     
     print('NUmber of batchs', len(batchs))
 

@@ -49,7 +49,7 @@ if __name__ == '__main__':
     
     print('Number of directories/files :::>', len(files_or_dirs))
 
-    batchs = make_batchs(file_or_dirs, args.num_batchs)
+    batchs = make_batchs(files_or_dirs, args.num_batchs)
     
     print('NUmber of batchs', len(batchs))
 

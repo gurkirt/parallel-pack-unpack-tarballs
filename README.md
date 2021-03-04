@@ -27,3 +27,15 @@ python unpack_dataset.py <directory-where-to-untar>\
   - Use `bsub_unpack.sh` as guidance for submitting batch job on eular
   - Use `${TMPDIR}` and `TARGETDIR=${TMPDIR}/data/`
   - Unpack all tarballs in parallel into `TARGETDIR`
+
+### Stats for unpacking
+
+Following are time report to unpack `16` tarballs made of `152GB`
+
+I measure time with two ways: 1. time taken to finish the `bsub_unpack.sh`; 2. Real time reported by putting `time` command in front of `python unpack_dataset.py`.
+
+| Number of threads | Job time |   Real |
+|:--:|:--:|:--:|
+| 1 | 19:20 |   14:35 |
+| 4 | 12:10 |   07:12 |
+| 16 | 07:20 |   02:49 |

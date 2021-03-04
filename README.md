@@ -6,13 +6,13 @@ Brake a large dataset and pack into multiple tar ball in parallel
 ```
 python pack_dataset.py <directory-to-tar-containing file or sub directories>\
     <directory-where-to-store-tarballs> \
-    --batch_size=<int:number of files or directories in single tar> \
+    --num_batchs=<int:number of tarball to create from give directory> \
     --num_jobs=<int:num of prcoess to use to tar>
 ```
 
 You can use `bsub_pack.sh` for your guidance.
 
-I use directories as basis for splitting/batching tarballs while pack but you uncomment line 43 in `pack_dataset.py` for finer control and modify accordingly.
+I use directories as basis for splitting/batching tarballs while pack but you uncomment line 48 and see line 9 in `pack_dataset.py` for finer control and modify accordingly.
 
 ## 2. Unpack a large dataset of multiple tar balls 
 Upack a large dataset broken into multiple tarballs 

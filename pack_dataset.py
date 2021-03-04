@@ -5,7 +5,7 @@ import math
 def tar_a_batch(data_dir, tar_dir, batch_id, batch):
     
     cmd = 'tar -cf {:s}/tarball_{:d}.tar '.format(tar_dir, batch_id) 
-    ## If using file name with os.walk then add filenames to text file 
+    ## If using file name with os.walk then add filenames to a text file 
     ## use tar -cv -T file_list.txt -f tarball_{:d}.tar
     for dir_name in batch:
         cmd += './'+dir_name + ' '
